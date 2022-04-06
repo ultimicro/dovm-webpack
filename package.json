@@ -16,7 +16,7 @@
   "repository": "github:ultimicro/dovm-webpack",
   "scripts": {
     "compile": "rimraf lib && tsc --outDir lib",
-    "prepare": "npm run compile",
+    "prepack": "npm run compile",
     "test": "mocha"
   },
   "dependencies": {
