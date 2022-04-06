@@ -1,4 +1,5 @@
 # DOVM Loader
+[![npm](https://img.shields.io/npm/v/dovm-loader)](https://www.npmjs.com/package/dovm-loader)
 
 This is a loader for webpack 5 to load *.dovm files.
 
