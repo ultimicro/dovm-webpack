@@ -1,0 +1,11 @@
+{
+  "include": ["src/**/*"],
+  "exclude": ["lib", "node_modules", "src/**/*.spec.ts"],
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES2015",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "importHelpers": true
+  }
+}

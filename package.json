@@ -1,0 +1,41 @@
+{
+  "name": "dovm-loader",
+  "version": "0.0.1",
+  "description": "A webpack loader for DOVM",
+  "keywords": [
+    "dovm",
+    "webpack"
+  ],
+  "homepage": "https://github.com/ultimicro/dovm-webpack",
+  "bugs": "https://github.com/ultimicro/dovm-webpack/issues",
+  "license": "MIT",
+  "files": [
+    "lib/**"
+  ],
+  "main": "lib/index.js",
+  "repository": "github:ultimicro/dovm-webpack",
+  "scripts": {
+    "compile": "rimraf lib && tsc --outDir lib",
+    "prepare": "npm run compile",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "parse5-sax-parser": "^6.0.1",
+    "tslib": "^2.3.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.0",
+    "@types/mocha": "^9.1.0",
+    "@types/node": "^10.17.60",
+    "@types/parse5-sax-parser": "^5.0.2",
+    "chai": "^4.3.6",
+    "mocha": "^9.2.2",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3",
+    "webpack": "^5.37.0"
+  },
+  "engines": {
+    "node": ">=10.17.60"
+  }
+}
