@@ -37,6 +37,10 @@ module.exports = {
 };
 ```
 
+## Options
+
+- `sourceFile`: `true` to dump a compiled source to `component.dovm.ts`. The purpose of this option is for debugging.
+
 ## License
 
 MIT

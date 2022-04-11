@@ -1,3 +1,5 @@
+
+import fs = require('fs');
 import SAXParser = require('parse5-sax-parser');
 import path = require('path');
 import { LoaderDefinition } from 'webpack';
@@ -6,7 +8,13 @@ import { Directive } from './directive';
 import { Parser } from './parser';
 import { Template } from './template';
 
-const loader: LoaderDefinition = function (source) {
+interface Options {
+  sourceFile?: boolean;
+}
+
+const loader: LoaderDefinition<Options> = function (source) {
+  const options = this.getOptions();
+
   // setup parser
   const model = path.parse(this.resourcePath).name;
   const parser = new SAXParser();
@@ -72,7 +80,14 @@ const loader: LoaderDefinition = function (source) {
     throw new Error('No <template> has been defined');
   }
 
-  return template.toTypeScript();
+  // transform
+  const result = template.toTypeScript();
+
+  if (options.sourceFile) {
+    fs.writeFileSync(this.resourcePath + '.ts', result);
+  }
+
+  return result;
 };
 
 export = loader;
